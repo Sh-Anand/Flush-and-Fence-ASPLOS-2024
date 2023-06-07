@@ -1,0 +1,97 @@
+\documentclass[pageno,hyperref]{jpaper}
+
+% todo commands
+\newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\MF}[1]{\textcolor{green}{MF: #1}}
+\newcommand{\MG}[1]{\textcolor{blue}{MG: #1}}
+\newcommand{\SA}[1]{\textcolor{orange}{SA: #1}}
+\newcommand{\GA}[1]{\textcolor{purple}{GA: #1}}
+
+% shortcut/correct commands
+\newcommand{\wb}[0]{writeback}
+\newcommand{\fl}[0]{flush}
+
+% label commands
+\renewcommand{\figureautorefname}{Figure}
+\renewcommand{\tableautorefname}{Table}
+\makeatletter
+\renewcommand{\sectionautorefname}{\S\@gobble}
+\makeatother
+\makeatletter
+\renewcommand{\subsectionautorefname}{\S\@gobble}
+\makeatother
+
+
+%replace XXX with the submission number you are given from the ASPLOS submission site.
+\newcommand{\asplossubmissionnumber}{XXX}
+\usepackage[normalem]{ulem}
+
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\title{
+Take Control of your RISC-V Cache}
+
+\author{Anon}
+
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+
+\begin{abstract}
+
+\TODO{Write abstract}
+
+\end{abstract}
+
+\input{Introduction}
+
+\input{Motivation}
+
+\input{Background}
+
+\input{Semantics}
+
+\section{Implementation}
+\label{sec:implementation}
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+To evaluate the \wb{} and \fl{} capabilities we examine the performance of the instructions under several scenarios.
+\autoref{sec:evaluation:micros} will evaluate the optimizations of our instructions and compare their performance to the implementations by Intel and Arm.
+Then \autoref{sec:evaluation:pm} we will examine the performance of \fl{} and \wb{} in a real-world persistent memory application and compare it to a state-of-the-art software library. 
+
+\subsection{Throughput and Latency}
+\label{sec:evaluation:micros}
+
+This will compare the throughput and latency of \fl{} and \wb{}, as well as the different optimizations we've applied. 
+It will also compare their performance to equivalent Intel and ARM implementations.
+
+\subsection{Persistent Application}
+\label{sec:evaluation:pm}
+
+This section will compare the software-controlled flush optimizations \cite{Wei:FliT:2022} to our hardware implementations.
+
+\subsection{A Database Workload?}
+
+Maybe Gustavo has a good use case for \wb{} and \fl{}
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+\section*{Acknowledgements}
+
+We'd like to acknowledge all our haters
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\end{document}
+

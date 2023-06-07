@@ -1,0 +1,7 @@
+\section{Motivation}
+\label{sec:motivation}
+
+\MG{Motivate correctness in general, PM more broadly, RISC-V doesn't have this functionality, greatly limiting server usage}
+
+A non-invalidating \wb{} may seem like the best idea, but there are times you may want to invalidate the data you've just accessed, for example when writing streaming data to a device ring-buffer.
+In this case, you likely will not access the same data again, and instead would prefer to make room in your cache for actually warm data, thus the \fl{}.
